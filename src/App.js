@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './components/UI/Header'
 import './scss/app.scss'
-import IntroPage from './components/IntroPage'
+import { BrowserRouter } from 'react-router-dom'
+import AppRouter from './components/AppRouter'
 
 const App = () => {
-  const [count, setCount] = useState(0)
   return (
-    <div className="content">
-      <Header />
-      <IntroPage />
-    </div>
+    <BrowserRouter>
+      <div className="content">
+        <Header />
+        <AppRouter />
+      </div>
+    </BrowserRouter>
   )
 }
 export default App

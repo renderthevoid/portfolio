@@ -10,9 +10,7 @@
     svg {
         width: 50px;
         height: 50px;
-    }
-    g {
-        fill: $fill;
+        fill: $fill
     }
     li {
         cursor: pointer;
@@ -53,17 +51,4 @@
         background-color: #fff;
     }
     
-}
-.switch_on {
-    background-color: #357edd;
-    border: 1px solid #357edd;
-    justify-content: flex-end;
-}
-
-.switch_off {
-    background-color: #d1d5db;
-    border: 1px solid #d1d5db;
-}
-.switch_off .switch__circle {
-    border: 1px solid #d1d5db;
 }

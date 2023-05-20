@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 @import "./libs/normalize";
 @import "keyframes";
 
@@ -11,8 +11,22 @@
 body{
     margin: 0; 
     overflow: hidden; 
-    background-color: #123;
+    background-color: $black;
 }
-.btn {
 
+.dark {
+    .text {
+        color: $white
+    }
+    .background {
+        background-color: $black;
+    }
+}
+.light {
+    .text {
+        color: $black;
+    }
+    .background {
+        background-color: $white
+    }
 }
