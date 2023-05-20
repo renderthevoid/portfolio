@@ -1,0 +1,91 @@
+@import "../variables";
+.intro {
+    position: relative;
+    &__background {
+        position: absolute;
+        z-index: -1;
+        svg {
+            width: 100vw;
+            height: 100vh;
+        }
+        use {
+            animation: move-forever 20s linear infinite;
+            &:nth-child(1){ 
+                animation-duration: 15s
+            }
+            &:nth-child(2){ 
+                animation-duration: 10s; 
+                animation-delay: -1.5s; 
+            }
+        }
+    }
+    &__wrapper {
+        height: 100vh;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    &__text {
+        margin: 150px 0;
+        p {
+            font-size: 24px;
+            color: $white;
+        }
+        h1 {
+            color: $white;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 30px;
+        }
+    }
+}
+.socials {
+    text-align: start;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .icon {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        &::after {
+            content: "";
+            background-color: $black;
+            border-radius: 50%;
+            position: absolute;
+            width: 62px;
+            height: 62px;
+            bottom: -5px;
+            right: -11px;
+            z-index: -2;
+        }
+    }
+    .icon + .icon {
+        margin-left: 40px;
+    }
+    &__icons {
+        margin-top: 20px;
+        @include flex(start, start);
+    }
+    h3 {
+        color: white;
+    }
+    &__icon {
+        &-telegram {
+
+        }
+    }
+    svg {
+        fill: white;
+        width: 40px;
+        height: 40px;
+        path {
+            fill: white;
+        }
+    }
+}

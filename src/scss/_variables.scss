@@ -1,0 +1,12 @@
+$black: #123;
+$white: white;
+$blue: #3461c1;
+$fill: rgba(240, 240, 240, 0.829);
+$fillactive: rgb(255, 255, 255);
+
+@mixin flex($jc, $ai) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $jc;
+    align-items: $ai;
+}
