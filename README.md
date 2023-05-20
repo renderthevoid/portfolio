@@ -5,7 +5,7 @@ Made by React / SCSS / Webpack
 
 #### HTTPS
 ```
-git clone https://github.com/renderthevoid/portfolio
+git clone https://github.com/renderthevoid/portfolio.git
 ```
 For installing all dependencies type `yarn`
 
