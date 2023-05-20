@@ -20,4 +20,4 @@ All files associated with the project code are located in `portfolio/src`
 + `assets` - static images
 + `components` - all components of the project
 + `pages` - individual pages of the site
-+ `styles` - main styles
++ `scss` - main styles
