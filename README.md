@@ -1,7 +1,5 @@
-# Portfolio v2
-Made by React / SCSS / Vite
-
-##### I decided to rewrite it because I don't like the speed of Webpack and npm
+# Portfolio
+Made by React / SCSS / Webpack
 
 # Installation
 
@@ -17,7 +15,6 @@ Main libraries / tools:
 + React
 + React Router Dom v6
 + SCSS
-+ Skeleton
 
 # Structure of the project
 All files associated with the project code are located in `portfolio/src`
