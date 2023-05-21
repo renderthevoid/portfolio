@@ -11,6 +11,7 @@ const AppRouter = () => {
             path={route.path}
             element={<route.element />}
             key={route.path}
+            exact={route.exact}
           />
         ))}
         <Route path="/*" element={<Navigate to="/Home" replace />} />

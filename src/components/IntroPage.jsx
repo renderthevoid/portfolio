@@ -1,7 +1,9 @@
 import React from 'react'
 import Button from './UI/Button'
+import { motion, useIsPresent } from 'framer-motion'
 
 const IntroPage = () => {
+  const isPresent = useIsPresent()
   return (
     <section className="intro">
       <div className="intro__wrapper">
@@ -24,13 +26,35 @@ const IntroPage = () => {
             </g>
           </svg>
         </div>
-        <div className="intro__text">
+        <motion.div
+          className="intro__text"
+          initial={{
+            x: -1000,
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+        >
           <p>Greetings</p>
           <h1>Vladislav Gorbunov</h1>
           <p>Frontend Developer</p>
           <Button value="VIEW MORE" />
-        </div>
-        <div className="socials">
+        </motion.div>
+        <motion.div
+          className="socials"
+          initial={{
+            x: 1000,
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+        >
           <h3>Socials / CV</h3>
           <div className="socials__icons">
             <a
@@ -85,8 +109,14 @@ const IntroPage = () => {
               </svg>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
+      <motion.div
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0, transition: { duration: 0.5, ease: 'circOut' } }}
+        exit={{ scaleX: 1, transition: { duration: 0.5, ease: 'circIn' } }}
+        style={{ originX: isPresent ? 0 : 1 }}
+      />
     </section>
   )
 }

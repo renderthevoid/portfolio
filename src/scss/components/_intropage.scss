@@ -4,6 +4,7 @@
     &__background {
         position: absolute;
         z-index: -1;
+        max-height: 100vh;
         svg {
             width: 100vw;
             height: 100vh;
@@ -90,6 +91,22 @@
         }
         path {
             fill: white;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .intro {
+        &__text {
+            padding-top: 20px;
+            margin: 80px 0;
+            text-align: center;
+        }
+        &__background {
+            max-height: 100vh;
+            svg {
+                height: 100vh;
+            }
         }
     }
 }

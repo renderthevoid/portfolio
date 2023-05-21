@@ -1,74 +1,78 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-let mode = "development";
-let target = "web";
-if (process.env.NODE_ENV === "production") {
-  mode = "production";
-  target = "browserslist";
+let mode = 'development'
+let target = 'web'
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production'
+  target = 'browserslist'
 }
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css",
+    filename: '[name].[contenthash].css',
   }),
   new HtmlWebpackPlugin({
-    template: "./public/index.html",
+    template: './public/index.html',
   }),
-];
+]
 
 if (process.env.SERVE) {
-  plugins.push(new ReactRefreshWebpackPlugin());
+  plugins.push(new ReactRefreshWebpackPlugin())
 }
 
 module.exports = {
   mode,
   target,
   plugins,
-  devtool: "source-map",
-  entry: "./src/index.js",
+  devtool: 'source-map',
+  entry: './src/index.js',
   devServer: {
-    static: "./dist",
+    static: './dist',
     hot: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://178.72.71.49:3000',
+    },
   },
 
   output: {
-    path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "assets/[hash][ext][query]",
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
 
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
   },
 
   module: {
     rules: [
-      { test: /\.(html)$/, use: ["html-loader"] },
+      { test: /\.(html)$/, use: ['html-loader'] },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
-        type: mode === "production" ? "asset" : "asset/resource",
+        type: mode === 'production' ? 'asset' : 'asset/resource',
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
@@ -76,4 +80,4 @@ module.exports = {
       },
     ],
   },
-};
+}
