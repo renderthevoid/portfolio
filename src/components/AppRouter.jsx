@@ -14,7 +14,7 @@ const AppRouter = () => {
             exact={route.exact}
           />
         ))}
-        <Route path="/*" element={<Navigate to="/Home" replace />} />
+        <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   )

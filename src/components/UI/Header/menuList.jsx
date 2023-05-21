@@ -5,13 +5,13 @@ export const menuList = [
   {
     id: 1,
     title: 'Home',
-    src: '/Home',
+    src: '/',
     component: <HomeIcon width="2.5em" height="2.5em" />,
   },
   {
     id: 2,
-    title: 'Projects',
-    src: '/Projects',
+    title: 'About',
+    src: '/About',
     component: <ComputerDesktopIcon width="2.5em" height="2.5em" fill=""/>,
   },
 ]

@@ -2,15 +2,14 @@
 @import "./libs/normalize";
 @import "keyframes";
 
-@import "./components/intropage";
+@import "./components/home";
+@import "./components/about";
 
 .content {
     max-width: 1920px;
     margin: 0 auto;
 }
 body{
-    margin: 0; 
-    overflow: hidden; 
     background-color: $black;
 }
 

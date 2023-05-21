@@ -1,8 +1,8 @@
 import Home from '../Pages/Home'
 import NotFound from '../Pages/NotFound'
-import Projects from '../Pages/Projects'
+import About from '../Pages/About'
 
 export const routes = [
-  { path: '/Home', element: Home, exact: true },
-  { path: '/Projects', element: Projects },
+  { path: '/', element: Home, exact: true },
+  { path: '/About', element: About },
 ]

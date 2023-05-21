@@ -1,4 +1,7 @@
 @import "../variables";
+section{
+    overflow: hidden; 
+}
 .intro {
     position: relative;
     &__background {
@@ -104,8 +107,9 @@
         }
         &__background {
             max-height: 100vh;
+            bottom: -5px;
             svg {
-                height: 100vh;
+                height: 50vh;
             }
         }
     }
