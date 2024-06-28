@@ -9,11 +9,6 @@ git clone https://github.com/renderthevoid/portfolio.git
 ```
 For installing all dependencies type `yarn`
 
-#### Development
-```
-yarn dev
-```
-
 Main libraries / tools:
 + React
 + React Router Dom v6
